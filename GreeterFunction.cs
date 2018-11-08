@@ -1,4 +1,4 @@
-using ExampleFunction.Services;
+using DiFuncApp.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using Willezone.Azure.WebJobs.Extensions.DependencyInjection;
 
-namespace ExampleFunction
+namespace DiFuncApp
 {
     public static class GreeterFunction
     {
@@ -42,6 +42,15 @@ namespace ExampleFunction
         {
             greeter.Greet();
             return new OkResult();
+        }
+
+        [FunctionName("Ping")]
+        public static IActionResult Ping(
+            [HttpTrigger(AuthorizationLevel.Function, "get")]HttpRequest req,
+            [Inject]IPing ping)
+        {
+            
+            return new OkObjectResult(ping.PingHost("Foo"));
         }
     }
 }

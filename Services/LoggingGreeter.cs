@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace ExampleFunction.Services
+namespace DiFuncApp.Services
 {
     public class LoggingGreeter
     {

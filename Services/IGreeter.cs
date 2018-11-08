@@ -1,4 +1,4 @@
-﻿namespace ExampleFunction
+﻿namespace DiFuncApp.Services
 {
     public interface ITransientGreeter
     {

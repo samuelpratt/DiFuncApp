@@ -1,5 +1,5 @@
-﻿using ExampleFunction;
-using ExampleFunction.Services;
+﻿using DiFuncApp.Services;
+using DiFuncApp;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Hosting;
 using Microsoft.Azure.WebJobs.Logging;
@@ -9,7 +9,7 @@ using System;
 using Willezone.Azure.WebJobs.Extensions.DependencyInjection;
 
 [assembly: WebJobsStartup(typeof(Startup))]
-namespace ExampleFunction
+namespace DiFuncApp
 {
     internal class Startup : IWebJobsStartup
     {
@@ -34,6 +34,7 @@ namespace ExampleFunction
             // Important: We need to call CreateFunctionUserCategory, otherwise our log entries might be filtered out.
             services.AddSingleton<ILogger>(_ => _loggerFactory.CreateLogger(LogCategories.CreateFunctionUserCategory("Common")));
             services.AddSingleton<LoggingGreeter>();
+            services.AddSingleton<IPing, Ping>();
 
             return services.BuildServiceProvider();
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExampleFunction
+namespace DiFuncApp.Services
 {
     public class Greeter : ITransientGreeter, IScopedGreeter, ISingletonGreeter
     {
