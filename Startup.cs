@@ -28,12 +28,9 @@ namespace DiFuncApp
         {
             var services = new ServiceCollection();
 
-            services.AddTransient<ITransientGreeter, Greeter>();
-            services.AddScoped<IScopedGreeter, Greeter>();
-            services.AddSingleton<ISingletonGreeter, Greeter>();
+
             // Important: We need to call CreateFunctionUserCategory, otherwise our log entries might be filtered out.
             services.AddSingleton<ILogger>(_ => _loggerFactory.CreateLogger(LogCategories.CreateFunctionUserCategory("Common")));
-            services.AddSingleton<LoggingGreeter>();
             services.AddSingleton<IPing, Ping>();
 
             return services.BuildServiceProvider();
