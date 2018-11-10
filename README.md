@@ -2,6 +2,6 @@
 
 ## What is this?
 
-A demo of a supper simple HTTP triggered Azure function.
+A demo of a super simple HTTP triggered Azure function.
 
 It has DI using Boris Wilhelms DI Library.
