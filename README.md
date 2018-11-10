@@ -4,4 +4,4 @@
 
 A demo of a super simple HTTP triggered Azure function.
 
-It has DI using Boris Wilhelms DI Library.
+It has DI using Boris Wilhelm's DI Library.
